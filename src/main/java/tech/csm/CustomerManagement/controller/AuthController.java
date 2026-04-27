@@ -25,7 +25,7 @@ public class AuthController {
     private final AuthenticationManager authManager;
     private final FileUtil fileUtil;
 
-   /* @PostMapping("/register")
+    @PostMapping("/register")
     public ResponseEntity<?> register(
             @RequestPart("data") RegisterRequest req,
             @RequestPart(value = "photo", required = false) MultipartFile photo) {
@@ -35,12 +35,12 @@ public class AuthController {
             photoFileName = fileUtil.uploadFile(photo);
         }
         return ResponseEntity.ok(userService.register(req, photoFileName));
-    }*/
+    }
 
-    @PostMapping("/register")
+   /* @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody RegisterRequest req) {
         return ResponseEntity.ok(userService.register(req, null));
-    }
+    }*/
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest req) {
@@ -55,5 +55,10 @@ public class AuthController {
     @GetMapping("/userdetails")
     public ResponseEntity<?> userDetails(Authentication auth) {
         return ResponseEntity.ok(userService.findByUserName(auth.getName()));
+    }
+
+    @GetMapping("/users")
+    public ResponseEntity<?> getAllUsers() {
+        return ResponseEntity.ok(userService.getAllUsers());
     }
 }

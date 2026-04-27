@@ -15,7 +15,7 @@ CREATE TABLE users (
 );
 
 CREATE TABLE customers (
-    cust_id VARCHAR(50) PRIMARY KEY,
+    cust_id int auto_increment primary KEY,
     cust_name VARCHAR(100) NOT NULL,
     cust_add VARCHAR(255),
     cust_phone VARCHAR(15),
@@ -26,3 +26,4 @@ CREATE TABLE customers (
 -- Pre-create admin (password = Admin1234)
  INSERT INTO users (user_name, user_email, password, role)
 VALUES ('Admin', 'admin@csm.com', '{bcrypt}$2a$10$y840R2nATpbHjazw9Tv1fO1fTF/i/GVQF7no.CymCnmuXHbafKZ3y', 'ADMIN');
+
