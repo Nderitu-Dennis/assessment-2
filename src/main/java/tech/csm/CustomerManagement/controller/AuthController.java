@@ -19,6 +19,8 @@ import tech.csm.CustomerManagement.util.JwtUtil;
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
 
+/*NOTE : UI code is at : https://github.com/Nderitu-Dennis/customer-management.git*/
+
 public class AuthController {
     private final UserService userService;
     private final JwtUtil jwtUtil;
