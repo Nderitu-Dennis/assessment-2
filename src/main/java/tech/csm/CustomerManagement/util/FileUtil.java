@@ -26,7 +26,7 @@ public class FileUtil {
         String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();  //to avoid file name collisions
         Path dest = Paths.get(uploadDir + fileName);
         try {
-            Files.copy(file.getInputStream(), dest, StandardCopyOption.REPLACE_EXISTING);q
+            Files.copy(file.getInputStream(), dest, StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException e) {
             throw new RuntimeException("Upload failed", e);
         }
