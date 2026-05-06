@@ -23,10 +23,10 @@ public class FileUtil {
         File dir = new File(uploadDir);
         if (!dir.exists()) dir.mkdirs();
 
-        String fileName = file.getOriginalFilename();
+        String fileName = System.currentTimeMillis() + "_" + file.getOriginalFilename();  //to avoid file name collisions
         Path dest = Paths.get(uploadDir + fileName);
         try {
-            Files.copy(file.getInputStream(), dest, StandardCopyOption.REPLACE_EXISTING);
+            Files.copy(file.getInputStream(), dest, StandardCopyOption.REPLACE_EXISTING);q
         } catch (IOException e) {
             throw new RuntimeException("Upload failed", e);
         }

@@ -61,6 +61,7 @@ public class AuthController {
 
     @GetMapping("/users")
     public ResponseEntity<?> getAllUsers() {
+        //todo - use a dto here cz now its sending even password
         return ResponseEntity.ok(userService.getAllUsers());
     }
 }
